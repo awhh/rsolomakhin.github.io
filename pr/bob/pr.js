@@ -35,6 +35,26 @@ function buildPaymentRequest() {
         value: '-10.00',
       },
     }],
+    modifiers: [{
+      supportedMethods: ['https://emerald-eon.appspot.com/bobpay'],
+      total: {
+        label: 'Discounted donation',
+        amount: {
+          currency: 'USD',
+          value: '45.00'
+        }
+      },
+      additionalDisplayItems: [{
+        label: 'BobPay discount',
+        amount: {
+          currency: 'USD',
+          value: '-10.00'
+        }
+      }],
+      data: {
+        discountProgramParticipantId: '86328764873265'
+      }
+    }],
   };
 
   let request = null;
